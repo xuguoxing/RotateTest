@@ -40,7 +40,8 @@
     [self.view addSubview:label];
     
     button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(50, 100, 100, 30);
+    button.frame = CGRectMake(50, 100, 200, 30);
+    [button setTitle:@"Toggle StatusBar" forState:UIControlStateNormal];
     [self.view addSubview:button];
     
     [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -85,10 +86,11 @@
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     NSLog(@"3.shouldAutorotateToInterfaceOrientation:%d",toInterfaceOrientation);
-    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+    /*if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
         return YES;
     }
-    return NO;
+    return NO;*/
+    return YES;
 }
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
